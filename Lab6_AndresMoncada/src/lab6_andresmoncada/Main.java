@@ -556,8 +556,11 @@ public class Main extends javax.swing.JFrame {
             v = false;
             for (int i = 0; i < usuarios.size(); i++) {
                 if (signin_pass.getText().equals(usuarios.get(i).getEmail())&& signin_email.getText().equals(usuarios.get(i).getPass())){
+                    signin_pass.setText("");
+                    signin_email.setText("");
                     v = true;
                     index_u = i;
+                    tree.setModel(usuarios.get(index_u).getArbol());
                     break;
                 }
             }
@@ -610,6 +613,7 @@ public class Main extends javax.swing.JFrame {
                 usuarios.get(index_u).getFavoritos().add((Serie)lm.get(jl_series.getSelectedIndex()));
             }
             tm.reload();
+            usuarios.get(index_u).setArbol(tm);
         }else{
             JOptionPane.showMessageDialog(this, "Seleccione una serie primero");
         }
@@ -650,6 +654,7 @@ public class Main extends javax.swing.JFrame {
                 usuarios.get(index_u).getFavoritos().add((Pelicula)lm.get(jl_peliculas.getSelectedIndex()));
             }
             tm.reload();
+            usuarios.get(index_u).setArbol(tm);
         }else{
             JOptionPane.showMessageDialog(this, "Seleccione una pelicula primero");
         }

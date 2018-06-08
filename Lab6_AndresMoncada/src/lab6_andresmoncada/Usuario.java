@@ -7,6 +7,8 @@ package lab6_andresmoncada;
 
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -18,6 +20,7 @@ public class Usuario {
     private Date dob;
     private String tarjeta;
     private ArrayList<Entretenimiento> favoritos = new ArrayList();
+    private DefaultTreeModel arbol = new DefaultTreeModel(new DefaultMutableTreeNode("Categorias"));
 
     public Usuario() {
     }
@@ -67,6 +70,14 @@ public class Usuario {
 
     public void setFavoritos(ArrayList<Entretenimiento> favoritos) {
         this.favoritos = favoritos;
+    }
+
+    public DefaultTreeModel getArbol() {
+        return arbol;
+    }
+
+    public void setArbol(DefaultTreeModel arbol) {
+        this.arbol = arbol;
     }
 
     @Override
