@@ -5,6 +5,8 @@
  */
 package lab6_andresmoncada;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Dell
@@ -15,7 +17,10 @@ public class Lab6_AndresMoncada {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Main m = new Main();
+        m.pack();
+        m.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        m.setVisible(true);
     }
     
 }

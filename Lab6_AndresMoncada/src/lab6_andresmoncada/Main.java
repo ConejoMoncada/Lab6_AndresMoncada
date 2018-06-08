@@ -5,6 +5,7 @@
  */
 package lab6_andresmoncada;
 
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 
 /**
@@ -18,6 +19,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        initListas();
     }
 
     /**
@@ -29,21 +31,33 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_signin = new javax.swing.JDialog();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        singin_email = new javax.swing.JTextField();
+        signin_pass = new javax.swing.JPasswordField();
+        jButton3 = new javax.swing.JButton();
+        jd_login = new javax.swing.JDialog();
+        jd_cs = new javax.swing.JDialog();
+        jd_ms = new javax.swing.JDialog();
+        jd_cp = new javax.swing.JDialog();
+        jd_mp = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        tree = new javax.swing.JTree();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jl_series = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jl_peliculas = new javax.swing.JList<>();
+        add_s = new javax.swing.JButton();
+        add_p = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_sesion = new javax.swing.JMenu();
+        jmi_signin = new javax.swing.JMenuItem();
         jmi_login = new javax.swing.JMenuItem();
-        jmi_logout = new javax.swing.JMenuItem();
+        jmi_signout = new javax.swing.JMenuItem();
         jm_admin = new javax.swing.JMenu();
         jmi_cs = new javax.swing.JMenuItem();
         jmi_ms = new javax.swing.JMenuItem();
@@ -53,21 +67,125 @@ public class Main extends javax.swing.JFrame {
         jmi_mp = new javax.swing.JMenuItem();
         jmi_ep = new javax.swing.JMenuItem();
 
+        jLabel4.setText("Correo");
+
+        jLabel5.setText("Contraseña");
+
+        jButton3.setText("Iniciar sesión");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_signinLayout = new javax.swing.GroupLayout(jd_signin.getContentPane());
+        jd_signin.getContentPane().setLayout(jd_signinLayout);
+        jd_signinLayout.setHorizontalGroup(
+            jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_signinLayout.createSequentialGroup()
+                .addGroup(jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_signinLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(singin_email)
+                            .addComponent(signin_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)))
+                    .addGroup(jd_signinLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jButton3)))
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        jd_signinLayout.setVerticalGroup(
+            jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_signinLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(singin_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(signin_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jButton3)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
+        jd_login.getContentPane().setLayout(jd_loginLayout);
+        jd_loginLayout.setHorizontalGroup(
+            jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_loginLayout.setVerticalGroup(
+            jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_csLayout = new javax.swing.GroupLayout(jd_cs.getContentPane());
+        jd_cs.getContentPane().setLayout(jd_csLayout);
+        jd_csLayout.setHorizontalGroup(
+            jd_csLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_csLayout.setVerticalGroup(
+            jd_csLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_msLayout = new javax.swing.GroupLayout(jd_ms.getContentPane());
+        jd_ms.getContentPane().setLayout(jd_msLayout);
+        jd_msLayout.setHorizontalGroup(
+            jd_msLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_msLayout.setVerticalGroup(
+            jd_msLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_cpLayout = new javax.swing.GroupLayout(jd_cp.getContentPane());
+        jd_cp.getContentPane().setLayout(jd_cpLayout);
+        jd_cpLayout.setHorizontalGroup(
+            jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_cpLayout.setVerticalGroup(
+            jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_mpLayout = new javax.swing.GroupLayout(jd_mp.getContentPane());
+        jd_mp.getContentPane().setLayout(jd_mpLayout);
+        jd_mpLayout.setHorizontalGroup(
+            jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_mpLayout.setVerticalGroup(
+            jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Categorías");
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        tree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(tree);
 
-        jList1.setModel(new DefaultListModel());
-        jScrollPane2.setViewportView(jList1);
+        jl_series.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(jl_series);
 
-        jList2.setModel(new DefaultListModel());
-        jScrollPane3.setViewportView(jList2);
+        jl_peliculas.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jl_peliculas);
 
-        jButton1.setText("Agregar Serie");
+        add_s.setText("Agregar Serie");
+        add_s.setEnabled(false);
 
-        jButton2.setText("Agregar Película");
+        add_p.setText("Agregar Película");
+        add_p.setEnabled(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("Favoritos");
@@ -80,12 +198,30 @@ public class Main extends javax.swing.JFrame {
 
         jm_sesion.setText("Sesión");
 
+        jmi_signin.setText("Sign in");
+        jmi_signin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_signinActionPerformed(evt);
+            }
+        });
+        jm_sesion.add(jmi_signin);
+
         jmi_login.setText("Log in");
+        jmi_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_loginActionPerformed(evt);
+            }
+        });
         jm_sesion.add(jmi_login);
 
-        jmi_logout.setText("Log out");
-        jmi_logout.setEnabled(false);
-        jm_sesion.add(jmi_logout);
+        jmi_signout.setText("Sign out");
+        jmi_signout.setEnabled(false);
+        jmi_signout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_signoutActionPerformed(evt);
+            }
+        });
+        jm_sesion.add(jmi_signout);
 
         jMenuBar1.add(jm_sesion);
 
@@ -122,56 +258,279 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(add_p)
+                            .addComponent(add_s))
+                        .addGap(55, 55, 55)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(66, 66, 66))
+                .addGap(73, 73, 73))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jButton1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(add_s)
+                                .addGap(89, 89, 89)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 36, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(80, 80, 80))))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(add_p))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public void initListas(){
+        Serie s = new Serie(2, 1, "Animaniacs", "Comedia", 3, "WB", "Steven Spielberg", "00:22");
+        s.getIdiomas().add("Ingles");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        series.add(s);
+        s = new Serie(1, 2, "Harry Potter y la Serie que Arruino la Continuidad", "Romance", 4, "ABC", "Christopher Nolan", "1:30");
+        s.getIdiomas().add("Ingles");
+        s.getIdiomas().add("Español");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        s.getSubt().add("Frances");
+        series.add(s);
+        s = new Serie(3, 3, "Whinnie the Pooh: La Historia Detras del Libro", "Suspenso", 5, "NBC", "Gullermo del Toro", "00:15");
+        s.getIdiomas().add("Ingles");
+        s.getIdiomas().add("Español");
+        s.getIdiomas().add("Frances");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        s.getSubt().add("Frances");
+        s.getSubt().add("Ruso");
+        series.add(s);
+        s = new Serie(2, 4, "Accidentes Marinos", "Deporte", 1, "FOX", "Edgar Wright", "00:25");
+        s.getIdiomas().add("Ingles");
+        s.getIdiomas().add("Español");
+        s.getIdiomas().add("Frances");
+        s.getIdiomas().add("Ruso");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        s.getSubt().add("Frances");
+        s.getSubt().add("Ruso");
+        series.add(s);
+        s = new Serie(6, 5, "Star Wars Episodio 1", "Terror", 2, "Disney", "George Lucas", "00:20");
+        s.getIdiomas().add("Ingles");
+        s.getIdiomas().add("Español");
+        s.getIdiomas().add("Frances");
+        s.getIdiomas().add("Ruso");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        s.getSubt().add("Frances");
+        s.getSubt().add("Ruso");
+        series.add(s);
+        s = new Serie(3, 6, "Noticias de Ultima Hora", "Comedia", 3, "HBO", "Peter Jackson", "00:45");
+        s.getIdiomas().add("Ingles");
+        s.getIdiomas().add("Español");
+        s.getIdiomas().add("Frances");
+        s.getIdiomas().add("Ruso");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        s.getSubt().add("Frances");
+        s.getSubt().add("Ruso");
+        series.add(s);
+        s = new Serie(4, 7, "La Cucaracha", "Drama", 4, "Canal 5", "Ang Lee", "00:59");
+        s.getIdiomas().add("Ingles");
+        s.getIdiomas().add("Español");
+        s.getIdiomas().add("Frances");
+        s.getIdiomas().add("Ruso");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        s.getSubt().add("Frances");
+        s.getSubt().add("Ruso");
+        series.add(s);
+        s = new Serie(2, 8, "Volleyball Navideño", "Deporte", 5, "ESPN", "Woody Allen", "01:04");
+        s.getIdiomas().add("Ingles");
+        s.getIdiomas().add("Español");
+        s.getIdiomas().add("Frances");
+        s.getIdiomas().add("Ruso");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        s.getSubt().add("Frances");
+        s.getSubt().add("Ruso");
+        series.add(s);
+        s = new Serie(5, 9, "Comida, la Serie", "Suspenso", 4, "Cartoon Network", "M. Night Shyamalan", "02:00");
+        s.getIdiomas().add("Ingles");
+        s.getIdiomas().add("Español");
+        s.getIdiomas().add("Frances");
+        s.getIdiomas().add("Ruso");
+        s.getSubt().add("Ingles");
+        s.getSubt().add("Español");
+        s.getSubt().add("Frances");
+        s.getSubt().add("Ruso");
+        series.add(s);
+        s = new Serie(1, 10, "Novela Mexicana", "Drama", 5, "Telemundo", "Brad Bird", "00:10");
+        s.getIdiomas().add("Aleman");
+        s.getSubt().add("Esperanto");
+        series.add(s);
+        Pelicula p = new Pelicula(101, "Sharknado", "Romance", 1, "Marvel", "Stanley Kubrick", "03:00");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(102, "Sharknado 2", "Drama", 1, "Disney", "Martin Scorsese", "01:20");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(103, "Sharknado 3", "Accion", 1, "FOX", "Alfred Hitchcock", "01:12");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(104, "Sharknado 4", "Comedia", 1, "Ilumination", "Roman Polanski", "01:30");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(105, "Sharknado 5", "Suspenso", 1, "Blue Sky", "Ridley Scott", "02:15");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(106, "The Room", "Accion", 2, "Pixar", "James Cameron", "02:17");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(107, "Camida, La Serie, La Pelicula", "Deporte", 5, "Disney", "Quentin Tarantino", "00:45");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(108, "Comedia Generica", "Terror", 3, "Sony Pictures", "Francis Ford Copola", "01:00");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(109, "Citizen Kane 2", "Romance", 5, "Guacamaya Films", "Joel Coen", "02:00");
+        p.getIdiomas().add("Español");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        p = new Pelicula(110, "La Histora de las Tortillas con Quesillo", "Documental", 1, "Dreamworks", "Ron Howard", "02:26");
+        p.getIdiomas().add("Ingles");
+        p.getIdiomas().add("Español");
+        p.getIdiomas().add("Frances");
+        p.getIdiomas().add("Ruso");
+        p.getSubt().add("Ingles");
+        p.getSubt().add("Español");
+        p.getSubt().add("Frances");
+        p.getSubt().add("Ruso");
+        peliculas.add(p);
+        DefaultListModel ms = (DefaultListModel)jl_series.getModel();
+        DefaultListModel mp = (DefaultListModel)jl_peliculas.getModel();
+        for (Serie se : series) {
+            ms.addElement(se);
+        }
+        for (Pelicula peli : peliculas) {
+            mp.addElement(peli);
+        }
+    }
+    private void jmi_signinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_signinActionPerformed
+        jd_signin.setModal(true);
+        jd_signin.pack();
+        jd_signin.setLocationRelativeTo(this);
+        jd_signin.setVisible(true);
+    }//GEN-LAST:event_jmi_signinActionPerformed
+
+    private void jmi_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_loginActionPerformed
+        jd_login.setModal(true);
+        jd_login.pack();
+        jd_login.setLocationRelativeTo(this);
+        jd_login.setVisible(true);
+    }//GEN-LAST:event_jmi_loginActionPerformed
+
+    private void jmi_signoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_signoutActionPerformed
+        jm_admin.setEnabled(false);
+        jmi_signin.setEnabled(true);
+        jmi_login.setEnabled(true);
+        add_s.setEnabled(false);
+        add_p.setEnabled(false);
+        jmi_signout.setEnabled(false);
+    }//GEN-LAST:event_jmi_signoutActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,7 +543,7 @@ public class Main extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -209,19 +568,27 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton add_p;
+    private javax.swing.JButton add_s;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JDialog jd_cp;
+    private javax.swing.JDialog jd_cs;
+    private javax.swing.JDialog jd_login;
+    private javax.swing.JDialog jd_mp;
+    private javax.swing.JDialog jd_ms;
+    private javax.swing.JDialog jd_signin;
+    private javax.swing.JList<String> jl_peliculas;
+    private javax.swing.JList<String> jl_series;
     private javax.swing.JMenu jm_admin;
     private javax.swing.JMenu jm_sesion;
     private javax.swing.JMenuItem jmi_cp;
@@ -229,8 +596,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_ep;
     private javax.swing.JMenuItem jmi_es;
     private javax.swing.JMenuItem jmi_login;
-    private javax.swing.JMenuItem jmi_logout;
     private javax.swing.JMenuItem jmi_mp;
     private javax.swing.JMenuItem jmi_ms;
+    private javax.swing.JMenuItem jmi_signin;
+    private javax.swing.JMenuItem jmi_signout;
+    private javax.swing.JPasswordField signin_pass;
+    private javax.swing.JTextField singin_email;
+    private javax.swing.JTree tree;
     // End of variables declaration//GEN-END:variables
+    private ArrayList<Usuario> usuarios = new ArrayList();
+    private ArrayList<Serie> series = new ArrayList();
+    private ArrayList<Pelicula> peliculas = new ArrayList();
 }
