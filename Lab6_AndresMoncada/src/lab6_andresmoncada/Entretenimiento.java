@@ -127,6 +127,9 @@ public class Entretenimiento {
 
     @Override
     public String toString() {
+        return nombre;
+    }
+    public String datos(){
         return id + " " + nombre + " Categoria:" + cat + " Rating:" + rating + " actores:" + actores + " duracion:" + duracion;
     }
     

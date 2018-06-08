@@ -30,7 +30,7 @@ public class Serie extends Entretenimiento{
 
     @Override
     public String toString() {
-        return super.toString() + " temporadas: " + temporadas;
+        return super.toString();
     }
     
 }

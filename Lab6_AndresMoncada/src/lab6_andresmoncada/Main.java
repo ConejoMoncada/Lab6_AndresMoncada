@@ -6,7 +6,11 @@
 package lab6_andresmoncada;
 
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -34,7 +38,7 @@ public class Main extends javax.swing.JFrame {
         jd_signin = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        singin_email = new javax.swing.JTextField();
+        signin_email = new javax.swing.JTextField();
         signin_pass = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
         jd_login = new javax.swing.JDialog();
@@ -91,7 +95,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(singin_email)
+                            .addComponent(signin_email)
                             .addComponent(signin_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)))
                     .addGroup(jd_signinLayout.createSequentialGroup()
                         .addGap(148, 148, 148)
@@ -104,7 +108,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(70, 70, 70)
                 .addGroup(jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(singin_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(signin_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(jd_signinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -183,9 +187,19 @@ public class Main extends javax.swing.JFrame {
 
         add_s.setText("Agregar Serie");
         add_s.setEnabled(false);
+        add_s.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_sActionPerformed(evt);
+            }
+        });
 
         add_p.setText("Agregar Película");
         add_p.setEnabled(false);
+        add_p.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_pActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("Favoritos");
@@ -255,30 +269,29 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(add_p)
-                            .addComponent(add_s))
-                        .addGap(55, 55, 55)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(73, 73, 73))
+                .addGap(197, 197, 197))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(add_s)
+                            .addComponent(add_p))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,36 +300,36 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(add_s)
-                                .addGap(89, 89, 89)
+                                .addGap(96, 96, 96)
                                 .addComponent(jLabel3))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 36, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(98, 98, 98)
-                                .addComponent(add_p))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18))
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(add_p)
+                                .addGap(120, 120, 120))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 29, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     public void initListas(){
+        usuarios.add(new Usuario("test", "test", new Date(), "AAAA"));
         Serie s = new Serie(2, 1, "Animaniacs", "Comedia", 3, "WB", "Steven Spielberg", "00:22");
         s.getIdiomas().add("Ingles");
         s.getSubt().add("Ingles");
@@ -505,6 +518,7 @@ public class Main extends javax.swing.JFrame {
             mp.addElement(peli);
         }
     }
+
     private void jmi_signinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_signinActionPerformed
         jd_signin.setModal(true);
         jd_signin.pack();
@@ -529,8 +543,117 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jmi_signoutActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+        boolean v;
+        if(signin_pass.getText().equals("admin")&& signin_email.getText().equals("admin")){
+            signin_pass.setText("");
+            signin_email.setText("");
+            jd_signin.setVisible(false);
+            jmi_signin.setEnabled(false);
+            jmi_signout.setEnabled(true);
+            jmi_login.setEnabled(false);
+            jm_admin.setEnabled(true);
+        }else{
+            v = false;
+            for (int i = 0; i < usuarios.size(); i++) {
+                if (signin_pass.getText().equals(usuarios.get(i).getEmail())&& signin_email.getText().equals(usuarios.get(i).getPass())){
+                    v = true;
+                    index_u = i;
+                    break;
+                }
+            }
+            if(v){
+                jd_signin.setVisible(false);
+                jm_admin.setEnabled(false);
+                jmi_signin.setEnabled(false);
+                jmi_login.setEnabled(false);
+                add_s.setEnabled(true);
+                add_p.setEnabled(true);
+                jmi_signout.setEnabled(true);
+            }else{
+                JOptionPane.showMessageDialog(jd_signin, "Usuario o contraseña incorrectos");
+            }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void add_sActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_sActionPerformed
+        if(jl_series.getSelectedIndex() >= 0){
+            DefaultTreeModel tm = (DefaultTreeModel)tree.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)tm.getRoot();
+            DefaultListModel lm = (DefaultListModel)jl_series.getModel();
+            DefaultMutableTreeNode nodo = new DefaultMutableTreeNode((Serie)lm.get(jl_series.getSelectedIndex()));
+            String categoria = ((Serie)lm.get(jl_series.getSelectedIndex())).getCat();
+            String nombre = ((Serie)lm.get(jl_series.getSelectedIndex())).getNombre();
+            System.out.println(categoria);
+            System.out.println(nombre);
+            int c = 0;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if(categoria.equals(raiz.getChildAt(i).toString())){
+                    for (int j = 0; j < raiz.getChildAt(i).getChildCount(); j++) {
+                        if(nombre.equals(raiz.getChildAt(i).getChildAt(j).toString())){
+                            c = 1;
+                            JOptionPane.showMessageDialog(this, "Ya agrego esta serie");
+                            break;
+                        }
+                    }
+                    if (c != 1){
+                        ((DefaultMutableTreeNode)raiz.getChildAt(i)).add(nodo);
+                        c = 2;
+                        usuarios.get(index_u).getFavoritos().add((Serie)lm.get(jl_series.getSelectedIndex()));
+                        break;
+                    }
+                }         
+            }//fin for
+            if (c == 0){
+                DefaultMutableTreeNode cat = new DefaultMutableTreeNode(categoria);
+                cat.add(nodo);
+                raiz.add(cat);
+                usuarios.get(index_u).getFavoritos().add((Serie)lm.get(jl_series.getSelectedIndex()));
+            }
+            tm.reload();
+        }else{
+            JOptionPane.showMessageDialog(this, "Seleccione una serie primero");
+        }
+    }//GEN-LAST:event_add_sActionPerformed
+
+    private void add_pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_pActionPerformed
+        if(jl_peliculas.getSelectedIndex() >= 0){
+            DefaultTreeModel tm = (DefaultTreeModel)tree.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)tm.getRoot();
+            DefaultListModel lm = (DefaultListModel)jl_peliculas.getModel();
+            DefaultMutableTreeNode nodo = new DefaultMutableTreeNode((Pelicula)lm.get(jl_peliculas.getSelectedIndex()));
+            String categoria = ((Pelicula)lm.get(jl_peliculas.getSelectedIndex())).getCat();
+            String nombre = ((Pelicula)lm.get(jl_peliculas.getSelectedIndex())).getNombre();
+            System.out.println(categoria);
+            System.out.println(nombre);
+            int c = 0;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if(categoria.equals(raiz.getChildAt(i).toString())){
+                    for (int j = 0; j < raiz.getChildAt(i).getChildCount(); j++) {
+                        if(nombre.equals(raiz.getChildAt(i).getChildAt(j).toString())){
+                            c = 1;
+                            JOptionPane.showMessageDialog(this, "Ya agrego esta pelicula");
+                            break;
+                        }
+                    }
+                    if (c != 1){
+                        ((DefaultMutableTreeNode)raiz.getChildAt(i)).add(nodo);
+                        c = 2;
+                        usuarios.get(index_u).getFavoritos().add((Pelicula)lm.get(jl_peliculas.getSelectedIndex()));
+                        break;
+                    }
+                }         
+            }//fin for
+            if (c == 0){
+                DefaultMutableTreeNode cat = new DefaultMutableTreeNode(categoria);
+                cat.add(nodo);
+                raiz.add(cat);
+                usuarios.get(index_u).getFavoritos().add((Pelicula)lm.get(jl_peliculas.getSelectedIndex()));
+            }
+            tm.reload();
+        }else{
+            JOptionPane.showMessageDialog(this, "Seleccione una pelicula primero");
+        }
+    }//GEN-LAST:event_add_pActionPerformed
 
     /**
      * @param args the command line arguments
@@ -600,11 +723,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_ms;
     private javax.swing.JMenuItem jmi_signin;
     private javax.swing.JMenuItem jmi_signout;
+    private javax.swing.JTextField signin_email;
     private javax.swing.JPasswordField signin_pass;
-    private javax.swing.JTextField singin_email;
     private javax.swing.JTree tree;
     // End of variables declaration//GEN-END:variables
     private ArrayList<Usuario> usuarios = new ArrayList();
     private ArrayList<Serie> series = new ArrayList();
     private ArrayList<Pelicula> peliculas = new ArrayList();
+    int index_u = 0;
 }
