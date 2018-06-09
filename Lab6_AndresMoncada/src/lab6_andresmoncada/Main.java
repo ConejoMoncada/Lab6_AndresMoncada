@@ -47,10 +47,10 @@ public class Main extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jTextField2 = new javax.swing.JTextField();
+        cu_email = new javax.swing.JTextField();
+        cu_pass = new javax.swing.JPasswordField();
+        cu_dob = new com.toedter.calendar.JDateChooser();
+        cu_tarjeta = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jd_cs = new javax.swing.JDialog();
         jLabel7 = new javax.swing.JLabel();
@@ -74,7 +74,24 @@ public class Main extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         cs_cat = new javax.swing.JTextField();
         jd_cp = new javax.swing.JDialog();
-        jd_mp = new javax.swing.JDialog();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        cp_id = new javax.swing.JTextField();
+        cp_nom = new javax.swing.JTextField();
+        cp_cat = new javax.swing.JTextField();
+        cp_rat = new javax.swing.JSpinner();
+        cp_pr = new javax.swing.JTextField();
+        cp_dir = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        cp_h = new javax.swing.JSpinner();
+        jLabel39 = new javax.swing.JLabel();
+        cp_min = new javax.swing.JSpinner();
+        jLabel40 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jd_ms = new javax.swing.JDialog();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -96,6 +113,25 @@ public class Main extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
         ms_cat = new javax.swing.JTextField();
+        jd_mp = new javax.swing.JDialog();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        mp_id = new javax.swing.JTextField();
+        mp_nom = new javax.swing.JTextField();
+        mp_cat = new javax.swing.JTextField();
+        mp_rat = new javax.swing.JSpinner();
+        mp_pr = new javax.swing.JTextField();
+        mp_dir = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
+        mp_h = new javax.swing.JSpinner();
+        jLabel48 = new javax.swing.JLabel();
+        mp_min = new javax.swing.JSpinner();
+        jLabel49 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tree = new javax.swing.JTree();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -180,6 +216,11 @@ public class Main extends javax.swing.JFrame {
         jLabel28.setText("Tarjeta de credito");
 
         jButton4.setText("Crear cuenta");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel29.setText("*Usamos tu tarjeta de crédito para verificar tu identidad");
@@ -202,10 +243,10 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(jLabel25))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jPasswordField1)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))))
+                                    .addComponent(cu_email)
+                                    .addComponent(cu_pass)
+                                    .addComponent(cu_dob, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cu_tarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))))
                     .addGroup(jd_loginLayout.createSequentialGroup()
                         .addGap(177, 177, 177)
                         .addComponent(jButton4)))
@@ -217,19 +258,19 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cu_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cu_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cu_dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cu_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel29)
                 .addGap(26, 26, 26)
@@ -364,26 +405,116 @@ public class Main extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
+        jLabel32.setText("ID");
+
+        jLabel33.setText("Nombre");
+
+        jLabel34.setText("Categoría");
+
+        jLabel35.setText("Rating");
+
+        jLabel36.setText("Productora");
+
+        jLabel37.setText("Director");
+
+        cp_rat.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+
+        jLabel38.setText("Duración");
+
+        cp_h.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel39.setText("H");
+
+        cp_min.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
+
+        jLabel40.setText("min");
+
+        jButton5.setText("Crear");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_cpLayout = new javax.swing.GroupLayout(jd_cp.getContentPane());
         jd_cp.getContentPane().setLayout(jd_cpLayout);
         jd_cpLayout.setHorizontalGroup(
             jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_cpLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel33))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_cpLayout.createSequentialGroup()
+                        .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_cpLayout.createSequentialGroup()
+                                    .addComponent(cp_rat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel34)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(cp_cat, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cp_id, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cp_nom, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cp_pr, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cp_dir, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 54, Short.MAX_VALUE))
+                    .addGroup(jd_cpLayout.createSequentialGroup()
+                        .addComponent(cp_h, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cp_min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jd_cpLayout.setVerticalGroup(
             jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jd_mpLayout = new javax.swing.GroupLayout(jd_mp.getContentPane());
-        jd_mp.getContentPane().setLayout(jd_mpLayout);
-        jd_mpLayout.setHorizontalGroup(
-            jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jd_mpLayout.setVerticalGroup(
-            jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_cpLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(cp_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(cp_nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel34)
+                    .addComponent(cp_cat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cp_rat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(cp_pr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(cp_dir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_cpLayout.createSequentialGroup()
+                        .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel38)
+                            .addGroup(jd_cpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cp_h, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel39)
+                                .addComponent(cp_min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel40)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel16.setText("ID");
@@ -510,6 +641,115 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel41.setText("ID");
+
+        jLabel42.setText("Nombre");
+
+        jLabel43.setText("Categoría");
+
+        jLabel44.setText("Rating");
+
+        jLabel45.setText("Productora");
+
+        jLabel46.setText("Director");
+
+        mp_rat.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+
+        jLabel47.setText("Duración");
+
+        mp_h.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel48.setText("H");
+
+        mp_min.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
+
+        jLabel49.setText("min");
+
+        jButton6.setText("Modificar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_mpLayout = new javax.swing.GroupLayout(jd_mp.getContentPane());
+        jd_mp.getContentPane().setLayout(jd_mpLayout);
+        jd_mpLayout.setHorizontalGroup(
+            jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_mpLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel47)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel44)
+                    .addComponent(jLabel41)
+                    .addComponent(jLabel45)
+                    .addComponent(jLabel42))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_mpLayout.createSequentialGroup()
+                        .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_mpLayout.createSequentialGroup()
+                                    .addComponent(mp_rat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel43)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(mp_cat, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(mp_id, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mp_nom, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mp_pr, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mp_dir, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 59, Short.MAX_VALUE))
+                    .addGroup(jd_mpLayout.createSequentialGroup()
+                        .addComponent(mp_h, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel48)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mp_min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel49)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jd_mpLayout.setVerticalGroup(
+            jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_mpLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(mp_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(mp_nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(jLabel43)
+                    .addComponent(mp_cat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mp_rat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(mp_pr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(mp_dir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel47)
+                    .addGroup(jd_mpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(mp_h, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel48)
+                        .addComponent(mp_min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel49)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Categorías");
@@ -598,20 +838,45 @@ public class Main extends javax.swing.JFrame {
         jm_admin.add(jmi_ms);
 
         jmi_es.setText("Eliminar Serie");
+        jmi_es.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_esActionPerformed(evt);
+            }
+        });
         jm_admin.add(jmi_es);
         jm_admin.add(jSeparator1);
 
         jmi_cp.setText("Crear Película");
+        jmi_cp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_cpActionPerformed(evt);
+            }
+        });
         jm_admin.add(jmi_cp);
 
         jmi_mp.setText("Modificar Película");
+        jmi_mp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_mpActionPerformed(evt);
+            }
+        });
         jm_admin.add(jmi_mp);
 
         jmi_ep.setText("Eliminar Película");
+        jmi_ep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_epActionPerformed(evt);
+            }
+        });
         jm_admin.add(jmi_ep);
         jm_admin.add(jSeparator2);
 
         jMenuItem1.setText("Guardar Datos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jm_admin.add(jMenuItem1);
 
         jMenuBar1.add(jm_admin);
@@ -1024,56 +1289,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jmi_csActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int id = Integer.parseInt(cs_id.getText());
-        boolean v = true;
-        for (Serie se : series) {
-            if(se.getId() == id){
-                v = false;
-                break;
-            }
-        }
-        for (Pelicula peli : peliculas) {
-            if(peli.getId() == id){
-                v = false;
-                break;
-            }
-        }
-        if(v){
-            String h;
-            if((int)cs_h.getValue() >= 10)
-                h = cs_h.getValue().toString();
-            else
-                h = "0" + cs_h.getValue();
-            String m;
-            if((int)cs_min.getValue() >= 10)
-                m = cs_min.getValue().toString();
-            else
-                m = "0" + cs_min.getValue();
-            String d = h + ":" + m;
-            series.add(new Serie((int)cs_temp.getValue(),Integer.parseInt(cs_id.getText()),cs_nom.getText(),cs_cat.getText(),
-                    (int)cs_rat.getValue(),cs_pr.getText(),cs_dir.getText(),d));
-            System.out.println(series.get(series.size()-1).datos());
-            DefaultListModel lm = (DefaultListModel) jl_series.getModel();
-            lm.addElement(series.get(series.size()-1));
-            jd_cs.setVisible(false);
-            cs_temp.setValue(1);
-            cs_id.setText("");
-            cs_nom.setText("");
-            cs_cat.setText("");
-            cs_dir.setText("");
-            cs_h.setValue(0);
-            cs_min.setValue(0);
-            cs_pr.setText("");
-            cs_rat.setValue(1);
-        }else
-            JOptionPane.showMessageDialog(this, "Ya existe una serie/pelicula con esta ID");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int id = Integer.parseInt(ms_id.getText());
-        boolean v = true;
-        DefaultListModel lm = (DefaultListModel) jl_series.getModel();
-        if(jl_series.getSelectedIndex() >= 0){
+        try{
+            int id = Integer.parseInt(cs_id.getText());
+            boolean v = true;
             for (Serie se : series) {
                 if(se.getId() == id){
                     v = false;
@@ -1088,39 +1306,93 @@ public class Main extends javax.swing.JFrame {
             }
             if(v){
                 String h;
-                if((int)ms_h.getValue() >= 10)
-                    h = ms_h.getValue().toString();
+                if((int)cs_h.getValue() >= 10)
+                    h = cs_h.getValue().toString();
                 else
-                    h = "0" + ms_h.getValue();
+                    h = "0" + cs_h.getValue();
                 String m;
-                if((int)ms_min.getValue() >= 10)
-                    m = ms_min.getValue().toString();
+                if((int)cs_min.getValue() >= 10)
+                    m = cs_min.getValue().toString();
                 else
-                    m = "0" + ms_min.getValue();
+                    m = "0" + cs_min.getValue();
                 String d = h + ":" + m;
-                series.get(jl_series.getSelectedIndex()).setCat(ms_cat.getText());
-                series.get(jl_series.getSelectedIndex()).setDirector(ms_dir.getText());
-                series.get(jl_series.getSelectedIndex()).setDuracion(d);
-                series.get(jl_series.getSelectedIndex()).setId(id);
-                series.get(jl_series.getSelectedIndex()).setNombre(ms_nom.getText());
-                series.get(jl_series.getSelectedIndex()).setProductora(ms_pr.getText());
-                series.get(jl_series.getSelectedIndex()).setRating((int)ms_rat.getValue());
-                series.get(jl_series.getSelectedIndex()).setTemporadas((int)ms_temp.getValue());
-                lm.set(jl_series.getSelectedIndex(),series.get(jl_series.getSelectedIndex()));
+                series.add(new Serie((int)cs_temp.getValue(),id,cs_nom.getText(),cs_cat.getText(),
+                        (int)cs_rat.getValue(),cs_pr.getText(),cs_dir.getText(),d));
                 System.out.println(series.get(series.size()-1).datos());
+                DefaultListModel lm = (DefaultListModel) jl_series.getModel();
                 lm.addElement(series.get(series.size()-1));
-                jd_ms.setVisible(false);
-                ms_temp.setValue(1);
-                ms_id.setText("");
-                ms_nom.setText("");
-                ms_cat.setText("");
-                ms_dir.setText("");
-                ms_h.setValue(0);
-                ms_min.setValue(0);
-                ms_pr.setText("");
-                ms_rat.setValue(1);
+                jd_cs.setVisible(false);
+                cs_temp.setValue(1);
+                cs_id.setText("");
+                cs_nom.setText("");
+                cs_cat.setText("");
+                cs_dir.setText("");
+                cs_h.setValue(0);
+                cs_min.setValue(0);
+                cs_pr.setText("");
+                cs_rat.setValue(1);
             }else
                 JOptionPane.showMessageDialog(this, "Ya existe una serie/pelicula con esta ID");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Se produjo un error al agregar la serie");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
+            int id = Integer.parseInt(ms_id.getText());
+            boolean v = true;
+            DefaultListModel lm = (DefaultListModel) jl_series.getModel();
+            if(jl_series.getSelectedIndex() >= 0){
+                for (Serie se : series) {
+                    if(se.getId() == id){
+                        v = false;
+                        break;
+                    }
+                }
+                for (Pelicula peli : peliculas) {
+                    if(peli.getId() == id){
+                        v = false;
+                        break;
+                    }
+                }
+                if(v){
+                    String h;
+                    if((int)ms_h.getValue() >= 10)
+                        h = ms_h.getValue().toString();
+                    else
+                        h = "0" + ms_h.getValue();
+                    String m;
+                    if((int)ms_min.getValue() >= 10)
+                        m = ms_min.getValue().toString();
+                    else
+                        m = "0" + ms_min.getValue();
+                    String d = h + ":" + m;
+                    series.get(jl_series.getSelectedIndex()).setCat(ms_cat.getText());
+                    series.get(jl_series.getSelectedIndex()).setDirector(ms_dir.getText());
+                    series.get(jl_series.getSelectedIndex()).setDuracion(d);
+                    series.get(jl_series.getSelectedIndex()).setId(id);
+                    series.get(jl_series.getSelectedIndex()).setNombre(ms_nom.getText());
+                    series.get(jl_series.getSelectedIndex()).setProductora(ms_pr.getText());
+                    series.get(jl_series.getSelectedIndex()).setRating((int)ms_rat.getValue());
+                    series.get(jl_series.getSelectedIndex()).setTemporadas((int)ms_temp.getValue());
+                    lm.set(jl_series.getSelectedIndex(),series.get(jl_series.getSelectedIndex()));
+                    jd_ms.setVisible(false);
+                    ms_temp.setValue(1);
+                    ms_id.setText("");
+                    ms_nom.setText("");
+                    ms_cat.setText("");
+                    ms_dir.setText("");
+                    ms_h.setValue(0);
+                    ms_min.setValue(0);
+                    ms_pr.setText("");
+                    ms_rat.setValue(1);
+                }else
+                    JOptionPane.showMessageDialog(this, "Ya existe una serie/pelicula con esta ID");
+            }else
+                JOptionPane.showMessageDialog(this, "Seleccione una serie primero");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Se produjo un error al modificar la serie");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1130,6 +1402,160 @@ public class Main extends javax.swing.JFrame {
         jd_ms.pack();
         jd_ms.setVisible(true);
     }//GEN-LAST:event_jmi_msActionPerformed
+
+    private void jmi_esActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_esActionPerformed
+        DefaultListModel lm = (DefaultListModel) jl_series.getModel();
+        if(jl_series.getSelectedIndex() >= 0){
+            int s = JOptionPane.showConfirmDialog(this, "Eliminar " +((Serie)lm.getElementAt(jl_series.getSelectedIndex())).toString()+"?","Eliminar Serie", JOptionPane.OK_CANCEL_OPTION);
+            if (s == JOptionPane.OK_OPTION){
+                lm.remove(jl_series.getSelectedIndex());
+                series.remove(jl_series.getSelectedIndex());
+            }
+        }else
+            JOptionPane.showMessageDialog(this, "Seleccione una serie primero");
+    }//GEN-LAST:event_jmi_esActionPerformed
+
+    private void jmi_cpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_cpActionPerformed
+        jd_cp.setModal(true);
+        jd_cp.pack();
+        jd_cp.setLocationRelativeTo(this);
+        jd_cp.setVisible(true);
+    }//GEN-LAST:event_jmi_cpActionPerformed
+
+    private void jmi_mpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_mpActionPerformed
+        jd_mp.setModal(true);
+        jd_mp.pack();
+        jd_mp.setLocationRelativeTo(this);
+        jd_mp.setVisible(true);
+    }//GEN-LAST:event_jmi_mpActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try {
+            usuarios.add(new Usuario(cu_email.getText(),cu_pass.getText(),cu_dob.getDate(),cu_tarjeta.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Se produjo un error al crear usuario");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jmi_epActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_epActionPerformed
+        DefaultListModel lm = (DefaultListModel) jl_peliculas.getModel();
+        if(jl_peliculas.getSelectedIndex() >= 0){
+            int s = JOptionPane.showConfirmDialog(this, "Eliminar " +((Pelicula)lm.getElementAt(jl_peliculas.getSelectedIndex())).toString()+"?","Eliminar Serie", JOptionPane.OK_CANCEL_OPTION);
+            if (s == JOptionPane.OK_OPTION){
+                lm.remove(jl_peliculas.getSelectedIndex());
+                peliculas.remove(jl_peliculas.getSelectedIndex());
+            }
+        }else
+            JOptionPane.showMessageDialog(this, "Seleccione una película primero");
+    }//GEN-LAST:event_jmi_epActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        //FALTAAAAAA
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       try{
+            int id = Integer.parseInt(cp_id.getText());
+            boolean v = true;
+            for (Serie se : series) {
+                if(se.getId() == id){
+                    v = false;
+                    break;
+                }
+            }
+            for (Pelicula peli : peliculas) {
+                if(peli.getId() == id){
+                    v = false;
+                    break;
+                }
+            }
+            if(v){
+                String h;
+                if((int)cp_h.getValue() >= 10)
+                    h = cp_h.getValue().toString();
+                else
+                    h = "0" + cp_h.getValue();
+                String m;
+                if((int)cp_min.getValue() >= 10)
+                    m = cp_min.getValue().toString();
+                else
+                    m = "0" + cp_min.getValue();
+                String d = h + ":" + m;
+                peliculas.add(new Pelicula(id,cp_nom.getText(),cp_cat.getText(),
+                        (int)cp_rat.getValue(),cp_pr.getText(),cp_dir.getText(),d));
+                DefaultListModel lm = (DefaultListModel) jl_peliculas.getModel();
+                lm.addElement(peliculas.get(peliculas.size()-1));
+                jd_cp.setVisible(false);
+                cp_id.setText("");
+                cp_nom.setText("");
+                cp_cat.setText("");
+                cp_dir.setText("");
+                cp_h.setValue(0);
+                cp_min.setValue(0);
+                cp_pr.setText("");
+                cp_rat.setValue(1);
+            }else
+                JOptionPane.showMessageDialog(this, "Ya existe una serie/pelicula con esta ID");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Se produjo un error al agregar la pelicula");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        try{
+            int id = Integer.parseInt(mp_id.getText());
+            boolean v = true;
+            DefaultListModel lm = (DefaultListModel) jl_peliculas.getModel();
+            if(jl_peliculas.getSelectedIndex() >= 0){
+                for (Serie se : series) {
+                    if(se.getId() == id){
+                        v = false;
+                        break;
+                    }
+                }
+                for (Pelicula peli : peliculas) {
+                    if(peli.getId() == id){
+                        v = false;
+                        break;
+                    }
+                }
+                if(v){
+                    String h;
+                    if((int)mp_h.getValue() >= 10)
+                        h = mp_h.getValue().toString();
+                    else
+                        h = "0" + mp_h.getValue();
+                    String m;
+                    if((int)mp_min.getValue() >= 10)
+                        m = mp_min.getValue().toString();
+                    else
+                        m = "0" + mp_min.getValue();
+                    String d = h + ":" + m;
+                    peliculas.get(jl_peliculas.getSelectedIndex()).setCat(mp_cat.getText());
+                    peliculas.get(jl_peliculas.getSelectedIndex()).setDirector(mp_dir.getText());
+                    peliculas.get(jl_peliculas.getSelectedIndex()).setDuracion(d);
+                    peliculas.get(jl_peliculas.getSelectedIndex()).setId(id);
+                    peliculas.get(jl_peliculas.getSelectedIndex()).setNombre(mp_nom.getText());
+                    peliculas.get(jl_peliculas.getSelectedIndex()).setProductora(mp_pr.getText());
+                    peliculas.get(jl_peliculas.getSelectedIndex()).setRating((int)mp_rat.getValue());
+                    lm.set(jl_peliculas.getSelectedIndex(),peliculas.get(jl_peliculas.getSelectedIndex()));
+                    jd_mp.setVisible(false);
+                    mp_id.setText("");
+                    mp_nom.setText("");
+                    mp_cat.setText("");
+                    mp_dir.setText("");
+                    mp_h.setValue(0);
+                    mp_min.setValue(0);
+                    mp_pr.setText("");
+                    mp_rat.setValue(1);
+                }else
+                    JOptionPane.showMessageDialog(this, "Ya existe una serie/pelicula con esta ID");
+            }else
+                JOptionPane.showMessageDialog(this, "Seleccione una pelicula primero");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Se produjo un error al modificar la pelicula");
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1169,6 +1595,14 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add_p;
     private javax.swing.JButton add_s;
+    private javax.swing.JTextField cp_cat;
+    private javax.swing.JTextField cp_dir;
+    private javax.swing.JSpinner cp_h;
+    private javax.swing.JTextField cp_id;
+    private javax.swing.JSpinner cp_min;
+    private javax.swing.JTextField cp_nom;
+    private javax.swing.JTextField cp_pr;
+    private javax.swing.JSpinner cp_rat;
     private javax.swing.JTextField cs_cat;
     private javax.swing.JTextField cs_dir;
     private javax.swing.JSpinner cs_h;
@@ -1178,11 +1612,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField cs_pr;
     private javax.swing.JSpinner cs_rat;
     private javax.swing.JSpinner cs_temp;
+    private com.toedter.calendar.JDateChooser cu_dob;
+    private javax.swing.JTextField cu_email;
+    private javax.swing.JPasswordField cu_pass;
+    private javax.swing.JTextField cu_tarjeta;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1208,7 +1647,25 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1216,14 +1673,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JDialog jd_cp;
     private javax.swing.JDialog jd_cs;
     private javax.swing.JDialog jd_login;
@@ -1243,6 +1697,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_ms;
     private javax.swing.JMenuItem jmi_signin;
     private javax.swing.JMenuItem jmi_signout;
+    private javax.swing.JTextField mp_cat;
+    private javax.swing.JTextField mp_dir;
+    private javax.swing.JSpinner mp_h;
+    private javax.swing.JTextField mp_id;
+    private javax.swing.JSpinner mp_min;
+    private javax.swing.JTextField mp_nom;
+    private javax.swing.JTextField mp_pr;
+    private javax.swing.JSpinner mp_rat;
     private javax.swing.JTextField ms_cat;
     private javax.swing.JTextField ms_dir;
     private javax.swing.JSpinner ms_h;
