@@ -5,6 +5,10 @@
  */
 package lab6_andresmoncada;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultListModel;
@@ -1161,6 +1165,7 @@ public class Main extends javax.swing.JFrame {
         add_s.setEnabled(false);
         add_p.setEnabled(false);
         jmi_signout.setEnabled(false);
+        tree.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("Categorias")));
     }//GEN-LAST:event_jmi_signoutActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1176,7 +1181,7 @@ public class Main extends javax.swing.JFrame {
         }else{
             v = false;
             for (int i = 0; i < usuarios.size(); i++) {
-                if (signin_pass.getText().equals(usuarios.get(i).getEmail())&& signin_email.getText().equals(usuarios.get(i).getPass())){
+                if (signin_pass.getText().equals(usuarios.get(i).getPass())&& signin_email.getText().equals(usuarios.get(i).getEmail())){
                     signin_pass.setText("");
                     signin_email.setText("");
                     v = true;
@@ -1207,8 +1212,6 @@ public class Main extends javax.swing.JFrame {
             DefaultMutableTreeNode nodo = new DefaultMutableTreeNode((Serie)lm.get(jl_series.getSelectedIndex()));
             String categoria = ((Serie)lm.get(jl_series.getSelectedIndex())).getCat();
             String nombre = ((Serie)lm.get(jl_series.getSelectedIndex())).getNombre();
-            System.out.println(categoria);
-            System.out.println(nombre);
             int c = 0;
             for (int i = 0; i < raiz.getChildCount(); i++) {
                 if(categoria.equals(raiz.getChildAt(i).toString())){
@@ -1248,8 +1251,6 @@ public class Main extends javax.swing.JFrame {
             DefaultMutableTreeNode nodo = new DefaultMutableTreeNode((Pelicula)lm.get(jl_peliculas.getSelectedIndex()));
             String categoria = ((Pelicula)lm.get(jl_peliculas.getSelectedIndex())).getCat();
             String nombre = ((Pelicula)lm.get(jl_peliculas.getSelectedIndex())).getNombre();
-            System.out.println(categoria);
-            System.out.println(nombre);
             int c = 0;
             for (int i = 0; i < raiz.getChildCount(); i++) {
                 if(categoria.equals(raiz.getChildAt(i).toString())){
@@ -1318,7 +1319,6 @@ public class Main extends javax.swing.JFrame {
                 String d = h + ":" + m;
                 series.add(new Serie((int)cs_temp.getValue(),id,cs_nom.getText(),cs_cat.getText(),
                         (int)cs_rat.getValue(),cs_pr.getText(),cs_dir.getText(),d));
-                System.out.println(series.get(series.size()-1).datos());
                 DefaultListModel lm = (DefaultListModel) jl_series.getModel();
                 lm.addElement(series.get(series.size()-1));
                 jd_cs.setVisible(false);
@@ -1432,6 +1432,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         try {
             usuarios.add(new Usuario(cu_email.getText(),cu_pass.getText(),cu_dob.getDate(),cu_tarjeta.getText()));
+            jd_login.setVisible(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Se produjo un error al crear usuario");
         }
@@ -1450,7 +1451,29 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jmi_epActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        //FALTAAAAAA
+        File archivo = null;
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        try {
+            archivo = new File("./Informacion Usuarios");
+            fw = new FileWriter(archivo, false);
+            bw = new BufferedWriter(fw);
+            for (Usuario u : usuarios) {
+                bw.write(u.getEmail() + "; ");
+                for (int i = 0; i < u.getFavoritos().size(); i++) {
+                    bw.write(u.getFavoritos().get(i).datos() + ", ");
+                }
+                bw.write(";");
+                bw.newLine();
+            }
+            JOptionPane.showMessageDialog(this, "Datos guardados en archivo \"Informacion de Usuarios\"");
+        } catch (Exception e) {
+        }
+        try {
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

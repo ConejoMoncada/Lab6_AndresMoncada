@@ -22,5 +22,4 @@ public class Pelicula extends Entretenimiento{
     public String toString() {
         return super.toString();
     }
-    
 }
