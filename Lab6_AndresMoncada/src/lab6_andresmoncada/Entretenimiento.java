@@ -130,7 +130,7 @@ public class Entretenimiento {
         return nombre;
     }
     public String datos(){
-        return id + " " + nombre + " Categoria:" + cat + " Rating:" + rating + " actores:" + actores + " duracion:" + duracion;
+        return id + " " + nombre + " Categoria: " + cat + " Rating:" + rating + " actores:" + actores + " duracion:" + duracion;
     }
     
 }

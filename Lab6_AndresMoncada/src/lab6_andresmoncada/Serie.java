@@ -32,5 +32,7 @@ public class Serie extends Entretenimiento{
     public String toString() {
         return super.toString();
     }
-    
+     public String datos(){
+         return id + " " + nombre + " Categoria: " +cat+ " temporadas: " + temporadas + " Rating:" + rating + " actores:" + actores + " duracion:" + duracion;
+     }
 }
